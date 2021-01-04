@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nagi-service
+  namespace: nagi
+spec:
+  type: LoadBalancer
+  selector:
+    app: nagi
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
