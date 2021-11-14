@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jquery-ing
+  namespace: nagi
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: k8-jquery.joshmc.xyz     
+    http:
+      paths:
+      - path: 
+        backend:
+          serviceName: nagi-service
+          servicePort: http
